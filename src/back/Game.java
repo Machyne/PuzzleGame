@@ -77,8 +77,15 @@ public class Game {
 		}
 	}
 
-	//TODO create a play-tested function for this
 	private int turnIncrease(int prevLevel) {
-		return (int)Math.round((float)prevLevel*1.5);
+		int increment = 0;
+		if(prevLevel<5){
+			increment = (int)Math.round((float)prevLevel*1.5);
+		}else if(prevLevel<10){
+			increment = prevLevel+2;
+		}else{
+			increment = (int)Math.round((float)prevLevel*.9)+1;
+		}
+		return increment;
 	}
 }
